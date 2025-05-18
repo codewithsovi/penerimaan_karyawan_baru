@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 // admin
 Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('dashboard_admin');
 Route::get('/admin/ManajemenAkun', [ManajemenAkunController::class, 'index'])->name('manajemen_akun');
-Route::post('/admin/ManajemenAkun', [ManajemenAkunController::class, 'store'])->name('manajemen_akun.store');
-
+Route::post('/admin/CreateAkun', [ManajemenAkunController::class, 'store'])->name('manajemen_akun.store');
+Route::put('/admin/UpdateAkun/{id}', [ManajemenAkunController::class, 'update'])->name('manajemen_akun.update');
+Route::delete('/admin/DeleteAkun/{id}', [ManajemenAkunController::class, 'destroy'])->name('manajemen_akun.destroy');
 // HRD
 Route::get('/HRD/dashboard', [DashboardHRDController::class, 'index'])->name('dashboard_HRD');
 

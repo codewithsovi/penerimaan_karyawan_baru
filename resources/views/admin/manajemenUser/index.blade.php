@@ -8,7 +8,7 @@
                 <button type="button" class="btn btn-primary text-white py-2 px-4 fw-semibold" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">
                     <i class="ri-add-line text-white"></i>
-                    Create Alternatif
+                    Create User
                 </button>
             </div>
             <div class="card bg-white border-0 rounded-10 mb-4">
@@ -28,43 +28,86 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($users as $item)
-                                    <tr>
-                                       <td>{{ $loop->iteration }}</td>
-                                       <td>{{ $item->name }}</td>
-                                       <td>{{ $item->email }}</td>
-                                       <td>{{ $item->role }}</td>
-                                        <td>
-                                            <div class="dropdown action-opt">
-                                                <button class="btn bg p-0" type="button" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <i data-feather="more-vertical"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
-                                                    <li>
-                                                        <a class="dropdown-item" href="">
-                                                            <i data-feather="edit-3"></i>
-                                                            Edit
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="">
-                                                            <i data-feather="trash-2"></i>
-                                                            Remove
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->role }}</td>
+                                            <td>
+                                                <div class="dropdown action-opt">
+                                                    <button class="btn bg p-0" type="button" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i data-feather="more-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editModal-{{ $item->id }}">
+                                                                <i data-feather="edit-3"></i>
+                                                                Edit
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <form action="{{ route('manajemen_akun.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus user ini?')">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="dropdown-item text-danger">
+                                                                    <i data-feather="trash-2"></i>
+                                                                    Remove
+                                                                </button>
+                                                            </form>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
 
+                                        <!-- Modal Edit User -->
+                                        <div class="modal fade" id="editModal-{{ $item->id }}" tabindex="-1" aria-labelledby="editModalLabel-{{ $item->id }}" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="editModalLabel-{{ $item->id }}">Edit User</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <form action="{{ route('manajemen_akun.update', $item->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <div class="modal-body">
+                                                            <div class="form-group mb-2">
+                                                                <label class="label">Nama</label>
+                                                                <input type="text" class="form-control text-dark h-58" name="name" value="{{ $item->name }}" required>
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label class="label">Email</label>
+                                                                <input type="email" class="form-control text-dark h-58" name="email" value="{{ $item->email }}" required>
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label class="label">Password <small class="text-muted">(Kosongkan jika tidak ingin mengubah)</small></label>
+                                                                <input type="password" class="form-control text-dark h-58" name="password">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label class="label">Role</label>
+                                                                <select class="form-control text-dark h-58" name="role" required>
+                                                                    <option value="admin" {{ $item->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                                                                    <option value="hrd" {{ $item->role == 'hrd' ? 'selected' : '' }}>User</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary text-white">Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 

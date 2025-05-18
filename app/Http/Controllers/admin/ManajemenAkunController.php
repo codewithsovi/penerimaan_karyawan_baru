@@ -18,12 +18,14 @@ class ManajemenAkunController extends Controller
     {
         try {
             $validated = $request->validate([
+                'name' => 'required|string|max:255', // Tambahkan ini
                 'email' => 'required|email|unique:users,email',
                 'password' => 'required|min:6',
-                'role' => 'required|in:admin,HRD,karyawan',
+                'role' => 'required|in:admin,HRD,karyawan', // gunakan huruf kapital jika DB kamu menyimpan seperti ini
             ]);
 
-             User::create([
+            User::create([
+                'name' => $validated['name'], // Tambahkan ini
                 'email' => $validated['email'],
                 'password' => bcrypt($validated['password']),
                 'role' => $validated['role'],
@@ -32,6 +34,43 @@ class ManajemenAkunController extends Controller
             return redirect()->back()->with('success', 'User berhasil dibuat.');
         } catch (\Throwable $e) {
             return redirect()->back()->with('error', 'Terjadi Kesalahan Saat Membuat Akun.');
+        }
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $validated = $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|unique:users,email,' . $id,
+                'role' => 'required|in:admin,HRD,karyawan',
+                'password' => 'nullable|min:6',
+            ]);
+
+            $user = User::findOrFail($id);
+            $user->name = $validated['name'];
+            $user->email = $validated['email'];
+            $user->role = $validated['role'];
+            if (!empty($validated['password'])) {
+                $user->password = bcrypt($validated['password']);
+            }
+            $user->save();
+
+            return redirect()->back()->with('success', 'User berhasil diupdate.');
+        } catch (\Throwable $e) {
+            return redirect()->back()->with('error', 'Terjadi Kesalahan Saat Mengupdate Akun.');
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $user = User::findOrFail($id);
+            $user->delete();
+            return redirect()->back()->with('success', 'User berhasil dihapus.');
+        } catch (\Throwable $e) {
+            return redirect()->back()->with('error', 'Terjadi Kesalahan Saat Menghapus Akun.');
         }
     }
 }

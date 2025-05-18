@@ -19,7 +19,7 @@
                         <li class="menu-title small text-uppercase">
                         <span class="menu-title-text">Auth</span>
                         </li>
-                        <a href="chat.html" class="menu-link">
+                        <a href="{{ route('manajemen_akun') }}" class="menu-link">
                             <i data-feather="lock" class="menu-icon tf-icons"></i>
                             <span class="title">Users</span>
                         </a>

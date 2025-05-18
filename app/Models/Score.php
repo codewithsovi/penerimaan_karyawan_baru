@@ -3,16 +3,17 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Kriteria;
+use App\Models\HasilSeleksi;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Alternatif extends Model
+class Score extends Model
 {
     use HasFactory;
-    protected $quarded=[
-        'id'
+    protected $quarded = [
+        'id',
     ];
 
     public function user() : BelongsTo
@@ -20,8 +21,8 @@ class Alternatif extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function kriteria() : BelongsTo
+    public function hasilseleksis() : HasOne
     {
-        return $this->belongsTo(Kriteria::class);
+        return $this->hasOne(HasilSeleksi::class);
     }
 }

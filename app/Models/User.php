@@ -3,9 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Score;
+use App\Models\Alternatif;
+use App\Models\NilaiAkhir;
+use App\Models\HasilSeleksi;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -21,6 +26,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -44,5 +50,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function alternatifs() :HasOne{
+        return $this->hasOne(Alternatif::class);
+    }
+
+    public function scores() :HasOne{
+        return $this->hasOne(Score::class);
+    }
+
+    public function hasilseleksis() :HasOne{
+        return $this->hasOne(HasilSeleksi::class);
     }
 }

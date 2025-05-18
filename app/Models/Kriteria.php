@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Alternatif;
+use App\Models\SubKriteria;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Kriteria extends Model
 {
@@ -15,5 +17,9 @@ class Kriteria extends Model
 
     public function subkriterias():HasMany{
         return $this->hasMany(SubKriteria::class);
+    }
+
+     public function alternatifs():HasMany{
+        return $this->hasMany(Alternatif::class);
     }
 }

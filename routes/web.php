@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\admin\DashboardAdminController;
+use App\Http\Controllers\admin\ManajemenAkunContreoller;
+use App\Http\Controllers\admin\ManajemenAkunController;
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\HRD\DashboardHRDController;
 use App\Http\Controllers\KriteriaController;
@@ -12,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 
 // admin
 Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('dashboard_admin');
+Route::get('/admin/ManajemenAkun', [ManajemenAkunController::class, 'index'])->name('manajemen_akun');
+Route::post('/admin/ManajemenAkun', [ManajemenAkunController::class, 'store'])->name('manajemen_akun.store');
 
 // HRD
 Route::get('/HRD/dashboard', [DashboardHRDController::class, 'index'])->name('dashboard_HRD');

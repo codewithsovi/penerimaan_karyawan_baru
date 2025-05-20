@@ -19,6 +19,13 @@
                     <span class="title">Dashboard</span>
                 </a>
                 <li class="menu-title small text-uppercase">
+                    <span class="menu-title-text">Pelamar</span>
+                </li>
+                <a href="{{ route('data_pelamar') }}" class="menu-link">
+                    <i data-feather="lock" class="menu-icon tf-icons"></i>
+                    <span class="title">Data Pemalamar</span>
+                </a>
+                <li class="menu-title small text-uppercase">
                     <span class="menu-title-text">SAW</span>
                 </li>
                 <a href="" class="menu-link">

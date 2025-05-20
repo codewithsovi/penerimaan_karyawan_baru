@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\HRD;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ManajemenAkunController extends Controller
+class DataPelamarController extends Controller
 {
-    public function index()
-    {
-        $users = User::all();
-        return view('admin.manajemenUser.index', compact('users'));
+    public function index(){
+        $pelamars = User::where('role', 'pelamar')->get();
+        return view('HRD.datapelamar.index', compact('pelamars'));
     }
 
     public function store(Request $request)
@@ -21,7 +20,7 @@ class ManajemenAkunController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email',
                 'password' => 'required|min:6',
-                'role' => 'required|in:admin,hrd,pelamar',
+                'role' => 'required|in:pelamar',
             ]);
 
             User::create([
@@ -37,14 +36,13 @@ class ManajemenAkunController extends Controller
         }
     }
 
-
     public function update(Request $request, $id)
     {
         try {
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email,' . $id,
-                'role' => 'required|in:admin,HRD,karyawan',
+                'role' => 'required|in:karyawan',
                 'password' => 'nullable|min:6',
             ]);
 

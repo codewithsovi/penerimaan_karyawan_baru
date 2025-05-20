@@ -27,20 +27,6 @@
 		<title>spk karyawan baru</title>
     </head>
     <body>
-        <!-- Start Preloader Area -->
-        <div class="preloader" id="preloader">
-            <div class="preloader">
-                <div class="waviy position-relative">
-                    <span class="d-inline-block">F</span>
-                    <span class="d-inline-block">A</span>
-                    <span class="d-inline-block">R</span>
-                    <span class="d-inline-block">O</span>
-                    <span class="d-inline-block">L</span>
-                </div>
-            </div>
-        </div>
-        <!-- End Preloader Area -->
-
         <!-- Start Sidebar Area -->
         @include('admin.components.sidebar')
         <!-- End Sidebar Area -->

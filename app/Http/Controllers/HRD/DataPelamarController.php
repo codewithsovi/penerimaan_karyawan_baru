@@ -43,7 +43,7 @@ class DataPelamarController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email,' . $id,
                 'role' => 'required|in:karyawan',
-                'password' => 'nullable|min:6',
+                'password' => 'nullable|min:6', 
             ]);
 
             $user = User::findOrFail($id);

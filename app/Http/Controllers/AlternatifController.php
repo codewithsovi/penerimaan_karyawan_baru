@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class AlternatifController extends Controller
 {
     public function index(){
-        $users = User::all();
-        $kriteria = Kriteria::all();
-        return view('shared.alternatif.index', compact('kriteria'));
+        $users = User::where('role', 'pelamar')->get();
+        $kriterias = Kriteria::all();
+        return view('shared.alternatif.index', compact('kriterias', 'users'));
     }
 }

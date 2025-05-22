@@ -3,9 +3,11 @@
 use App\Http\Controllers\admin\DashboardAdminController;
 use App\Http\Controllers\admin\ManajemenAkunController;
 use App\Http\Controllers\AlternatifController;
+
 use App\Http\Controllers\HRD\DashboardHRDController;
 use App\Http\Controllers\HRD\DataPelamarController;
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\Sesi\SesiController;
 use App\Http\Controllers\SubKriteriaController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +31,7 @@ Route::get('/subkriteria/{id}', [SubKriteriaController::class, 'subkriteria'])->
 
 // Alternatif
 Route::get('/alternatif', [AlternatifController::class, 'index'])->name('alternatif');
+
+//Auth
+Route::get('/', [SesiController::class, 'toLogin'])->name('login');
+Route::post('/', [SesiController::class, 'prosesLogin'])->name('proses.login');

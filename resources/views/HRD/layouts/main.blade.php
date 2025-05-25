@@ -20,27 +20,12 @@
         <link rel="stylesheet" href="{{ asset('farol') }}/assets/css/quill.snow.css">
 		<link rel="stylesheet" href="{{ asset('farol') }}/assets/css/style.css">
 
-
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="{{ asset('farol') }}/assets/images/favicon.png">
 		<!-- Title -->
 		<title>spk karyawan baru</title>
     </head>
     <body>
-        <!-- Start Preloader Area -->
-        <div class="preloader" id="preloader">
-            <div class="preloader">
-                <div class="waviy position-relative">
-                    <span class="d-inline-block">F</span>
-                    <span class="d-inline-block">A</span>
-                    <span class="d-inline-block">R</span>
-                    <span class="d-inline-block">O</span>
-                    <span class="d-inline-block">L</span>
-                </div>
-            </div>
-        </div>
-        <!-- End Preloader Area -->
-
         <!-- Start Sidebar Area -->
         @include('HRD.components.sidebar')
         <!-- End Sidebar Area -->

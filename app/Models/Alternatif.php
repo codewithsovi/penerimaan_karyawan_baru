@@ -11,9 +11,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Alternatif extends Model
 {
     use HasFactory;
-    protected $quarded=[
-        'id'
-    ];
+    protected $fillable = [
+    'user_id',
+    'kriteria_id',
+    'nilai',
+];
 
     public function user() : BelongsTo
     {

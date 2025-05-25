@@ -15,14 +15,13 @@
                 <div class="card-body p-4">
                     <div class="default-table-area members-list">
                         <div class="table-responsive">
-
                             <table class="table align-middle" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th scope="col">username</th>
                                         <th scope="col">Email</th>
-                                        <th>Role</th>
+                                        <th scope="col">Role</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -166,7 +165,8 @@
                                 <select class="form-control text-dark h-58" name="role" required>
                                     <option value="" disabled selected>Pilih Role</option>
                                     <option value="admin">Admin</option>
-                                    <option value="hrd">User</option>
+                                    <option value="hrd">HRD</option>
+                                    <option value="pelamar">Pelamar</option>
                                 </select>
                             </div>
                         </div>

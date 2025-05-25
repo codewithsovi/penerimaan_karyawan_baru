@@ -132,7 +132,7 @@
                         <div class="form-group mb-2">
                             <label class="label">Tanggal Lahir</label>
                             <div class="form-group">
-                                <input type="text" class="form-control text-dark h-58" name="password" placeholder="ddmmyy" required>
+                                <input type="text" class="form-control text-dark h-58" name="password" placeholder="DD-MM-YYYY" required>
                             </div>
                         </div>
                         <input type="hidden" value="pelamar" class="form-control text-dark h-58" name="role">

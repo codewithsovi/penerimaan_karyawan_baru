@@ -26,8 +26,6 @@
 
 <body>
 
-
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
@@ -36,16 +34,16 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="{{ asset('chain-1.0.0') }}/index.html" class="logo">
-              <img src="{{ asset('chain-1.0.0') }}/assets/images/logo.png" alt="Chain App Dev">
+              <img src="{{ asset('chain-1.0.0') }}/assets/images/logo-sspkb-putih.jpg" alt="Chain App Dev" width="25" height="45" style="margin-left: 20px;">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#top" class="active">Beranda</a></li>
               <li class="scroll-to-section"><a href="#services">Proses</a></li>
               <li class="scroll-to-section"><a href="#about">Tentang</a></li>
               <li class="scroll-to-section"><a href="#pricing">Panduan</a></li>
-              <li><div class="gradient-button"><a id="modal_trigger" href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i>Sign In</a></div></li>
             </ul>
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -296,7 +294,7 @@
           <div class="footer-widget">
             <h4>About Our Company</h4>
             <div class="logo">
-              <img src="{{ asset('chain-1.0.0') }}/assets/images/white-logo.png" alt="">
+              <img src="{{ asset('chain-1.0.0') }}/assets/images/logo-sspkb-transparan.png"  width="60" height="60" alt="logo-s2pkb">
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
           </div>

@@ -19,7 +19,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th scope="col">username</th>
+                                        <th scope="col">Nama</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Role</th>
                                         <th scope="col">Aksi</th>
@@ -105,6 +105,9 @@
                                                                         Admin</option>
                                                                     <option value="hrd"
                                                                         {{ $item->role == 'hrd' ? 'selected' : '' }}>User
+                                                                    </option>
+                                                                    <option value="hrd"
+                                                                        {{ $item->role == 'pelamar' ? 'selected' : '' }}>User
                                                                     </option>
                                                                 </select>
                                                             </div>

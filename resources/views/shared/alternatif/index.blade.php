@@ -57,7 +57,7 @@
                                                                 @method('DELETE')
                                                                 <button type="submit" class="dropdown-item text-danger">
                                                                     <i data-feather="trash-2"></i>
-                                                                    Remove
+                                                                    Hapus
                                                                 </button>
                                                             </form>
                                                         </li>
@@ -96,7 +96,6 @@
                                                                         required>
                                                                 </div>
                                                             @endforeach
-
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-danger text-white"

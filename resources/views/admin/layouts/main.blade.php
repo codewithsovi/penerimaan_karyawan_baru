@@ -45,7 +45,7 @@
 
             <div class="flex-grow-1"></div>
 
-            <!-- Start Footer Area -->http://127.0.0.1:8000/index.html
+            <!-- Start Footer Area -->
             @include('admin.components.footer')
             <!-- End Footer Area -->
         </div>

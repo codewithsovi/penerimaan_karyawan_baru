@@ -20,7 +20,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th scope="col">username</th>
+                                        <th scope="col">Nama</th>
                                         <th scope="col">Email</th>
                                         {{-- <th scope="col">Tanggal Lahir</th> --}}
                                         <th scope="col">Aksi</th>

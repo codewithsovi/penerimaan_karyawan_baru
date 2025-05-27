@@ -7,6 +7,7 @@ use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\HRD\DashboardHRDController;
 use App\Http\Controllers\HRD\DataPelamarController;
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\SawController;
 use App\Http\Controllers\Sesi\SesiController;
 use App\Http\Controllers\SubKriteriaController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,6 @@ Route::get('/', function () { return view('index');})->name('halaman_utama');
 
 // admin
 Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('dashboard_admin');
-
 // manajemen akun
 Route::get('/admin/ManajemenAkun', [ManajemenAkunController::class, 'index'])->name('manajemen_akun');
 Route::post('/admin/CreateAkun', [ManajemenAkunController::class, 'store'])->name('manajemen_akun.store');
@@ -40,6 +40,8 @@ Route::post('/alternatif/store', [AlternatifController::class, 'store'])->name('
 Route::put('/alternatifUpdate/{user}', [AlternatifController::class, 'update'])->name('alternatif.update');
 Route::delete('/alternatifDelete/{user}', [AlternatifController::class, 'destroy'])->name('alternatif.destroy');
 
+// SAW
+Route::get('/SAW', [SawController::class, 'index'])->name('saw.index');
 //Auth
 Route::get('/login', [SesiController::class, 'toLogin'])->name('login');
 Route::post('/proses-login', [SesiController::class, 'prosesLogin'])->name('proses.login');

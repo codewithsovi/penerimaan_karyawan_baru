@@ -1,7 +1,7 @@
 <div class="sidebar-area" id="sidebar-area">
     <div class="logo position-relative">
         <a href="index.html" class="d-block text-decoration-none">
-            <img src="{{ asset('farol') }}/assets/images/logo-icon.png" alt="logo-icon">
+            <img src="{{ asset('chain-1.0.0') }}/assets/images/logo-sspkb-putih.jpg" alt="Chain App Dev" width="150" height="150">
             <span class="logo-text fw-bold text-dark">Farol</span>
         </a>
         <button

@@ -12,16 +12,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Score extends Model
 {
     use HasFactory;
-    protected $quarded = [
-        'id',
-    ];
+    protected $fillable = ['user_id', 'nilai_akhir'];
 
-    public function user() : BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function hasilseleksis() : HasOne
+    public function hasilseleksis(): HasOne
     {
         return $this->hasOne(HasilSeleksi::class);
     }

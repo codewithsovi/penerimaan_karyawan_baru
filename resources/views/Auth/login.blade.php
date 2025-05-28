@@ -31,10 +31,6 @@
             <!-- Start Authentication Area -->
             <div class="m-auto py-5" style="max-width: 600px; width: 100%;">
                 <form action="{{ route('proses.login') }}" method="POST" class="card shadow-sm border-0 rounded-10">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <h4 class="fs-3 mb-0">Get’s started.</h4>
-                    </div>
-                    <p class="fs-18 mb-5">Silakan login dengan menggunakan email terdaftar dan tanggal lahir Anda (format: DD-MM-YYYY) sebagai password.</p>
                     <div class="d-flex align-items-center gap-4 mb-3 justify-content-center">
                         <h4 class="fs-3 mb-0" style="">Login</h4>
                     </div>

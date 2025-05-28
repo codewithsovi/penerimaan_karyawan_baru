@@ -6,6 +6,8 @@ use App\Http\Controllers\AlternatifController;
 
 use App\Http\Controllers\HRD\DashboardHRDController;
 use App\Http\Controllers\HRD\DataPelamarController;
+use App\Http\Controllers\Pelamar\DashboardPelamarController;
+use App\Http\Controllers\HasilController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\SawController;
 use App\Http\Controllers\Sesi\SesiController;
@@ -30,6 +32,14 @@ Route::post('/HRD/CreatePelamar', [DataPelamarController::class, 'store'])->name
 Route::put('/HRD/UpdatePelamar/{id}', [DataPelamarController::class, 'update'])->name('pelamar.update');
 Route::delete('/HRD/DeletePelamar/{id}', [DataPelamarController::class, 'destroy'])->name('pelamar.destroy');
 
+// Dashboard Pelamar
+Route::get('/pelamar/dashboard', [DashboardPelamarController::class, 'index'])->name('dashboard_pelamar');
+//hasil
+Route::prefix('pelamar')->middleware(['auth'])->group(function () {
+    Route::get('/hasil', [HasilController::class, 'index'])->name('pelamar.hasil');
+});
+
+
 // kriteria
 Route::get('/kriteria', [KriteriaController::class, 'kriteria'])->name('kriteria');
 Route::get('/subkriteria/{id}', [SubKriteriaController::class, 'subkriteria'])->name('subkriteria');
@@ -45,3 +55,4 @@ Route::get('/SAW', [SawController::class, 'index'])->name('saw.index');
 //Auth
 Route::get('/login', [SesiController::class, 'toLogin'])->name('login');
 Route::post('/proses-login', [SesiController::class, 'prosesLogin'])->name('proses.login');
+Route::post('/logout', [SesiController::class, 'logout'])->name('logout');

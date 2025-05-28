@@ -28,10 +28,20 @@ class SesiController extends Controller
                 return redirect()->route('dashboard_admin');
             } elseif ($user->role === 'hrd') {
                 return redirect()->route('dashboard_HRD');
+            } elseif ($user->role === 'pelamar') {
+                return redirect()->route('dashboard_pelamar');
             }
         }
 
         return back()->with('error', 'Email atau password salah.');
     }
+    public function logout(Request $request)
+{
+    Auth::logout(); // keluarin user
+    $request->session()->invalidate(); // reset session
+    $request->session()->regenerateToken(); // biar aman dari CSRF
+
+    return redirect('/'); // arahkan ke halaman utama
+}
 
 }

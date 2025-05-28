@@ -234,7 +234,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center text-body" href="logout.html">
+                                    <a class="dropdown-item d-flex align-items-center text-body" href="/">
                                         <i data-feather="log-out"></i>
                                         <span class="ms-2">Logout</span>
                                     </a>

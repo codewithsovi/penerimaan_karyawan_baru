@@ -55,7 +55,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3 info">
                         <a href="profile.html" class="d-block name">Adison Jeck</a>
-                        <a href="logout.html">Log Out</a>
+                        <a href="/">Log Out</a>
                     </div>
                 </div>
             </div>

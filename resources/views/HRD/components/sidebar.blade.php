@@ -22,7 +22,7 @@
                 </li>
                 <a href="{{ route('data_pelamar') }}" class="menu-link">
                     <i data-feather="lock" class="menu-icon tf-icons"></i>
-                    <span class="title">Data Pemalamar</span>
+                    <span class="title">Data Pelamar</span>
                 </a>
                 <li class="menu-title small text-uppercase">
                     <span class="menu-title-text">SAW</span>

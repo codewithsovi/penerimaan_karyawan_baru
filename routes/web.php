@@ -62,12 +62,12 @@ Route::middleware(['isLogin'])->group(function () {
 
     Route::middleware(['userAkses:pelamar'])->group(function () {
 
-        Route::get('/pelamar/dashboard', [PelamarController::class, 'index'])->name('dashboard_pelamar');
+        Route::get('/pelamar', [PelamarController::class, 'index'])->name('beranda.pelamar');
 
         Route::prefix('pelamar')
             ->middleware(['auth'])
             ->group(function () {
-                Route::get('/hasil', [HasilController::class, 'index'])->name('pelamar.hasil');
+                Route::get('/hasil', [HasilController::class, 'index'])->name('hasil.pelamar');
             });
     });
 });

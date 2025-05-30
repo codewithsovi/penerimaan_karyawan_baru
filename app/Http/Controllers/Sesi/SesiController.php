@@ -21,7 +21,7 @@ class SesiController extends Controller
         $infoLogin = $request->only('email', 'password');
 
         if (Auth::attempt($infoLogin)) {
-            $request->session()->regenerate(); // 🔐 Security: prevent session fixation
+            $request->session()->regenerate();
 
             $user = Auth::user();
             if ($user->role === 'admin') {
@@ -29,7 +29,7 @@ class SesiController extends Controller
             } elseif ($user->role === 'hrd') {
                 return redirect()->route('dashboard_HRD');
             } elseif ($user->role === 'pelamar') {
-                return redirect()->route('dashboard_pelamar');
+                return redirect()->route('beranda.pelamar');
             }
         }
 
@@ -37,11 +37,11 @@ class SesiController extends Controller
     }
     public function logout(Request $request)
     {
-        Auth::logout(); // keluarin user
-        $request->session()->invalidate(); // reset session
-        $request->session()->regenerateToken(); // biar aman dari CSRF
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-        return redirect('/'); // arahkan ke halaman utama
+        return redirect('/');
     }
 
 }

@@ -21,7 +21,9 @@
                                         @foreach ($kriterias as $kriteria)
                                             <th scope="col">{{ $kriteria->kode_kriteria }}</th>
                                         @endforeach
-                                        <th scope="col">Aksi</th>
+                                        @if (auth()->user()->role === 'hrd')
+                                            <th scope="col">Aksi</th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,6 +39,7 @@
                                                 @endphp
                                                 <td>{{ $nilai }}</td>
                                             @endforeach
+                                             @if (auth()->user()->role === 'hrd')
                                             <td>
                                                 <div class="dropdown action-opt">
                                                     <button class="btn bg p-0" type="button" data-bs-toggle="dropdown"
@@ -66,6 +69,7 @@
                                                     </ul>
                                                 </div>
                                             </td>
+                                             @endif
                                         </tr>
 
                                         <div class="modal fade" id="editModal-{{ $user->id }}" tabindex="-1"

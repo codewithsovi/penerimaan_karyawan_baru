@@ -36,12 +36,12 @@ class SesiController extends Controller
         return back()->with('error', 'Email atau password salah.');
     }
     public function logout(Request $request)
-{
-    Auth::logout(); // keluarin user
-    $request->session()->invalidate(); // reset session
-    $request->session()->regenerateToken(); // biar aman dari CSRF
+    {
+        Auth::logout(); // keluarin user
+        $request->session()->invalidate(); // reset session
+        $request->session()->regenerateToken(); // biar aman dari CSRF
 
-    return redirect('/'); // arahkan ke halaman utama
-}
+        return redirect('/'); // arahkan ke halaman utama
+    }
 
 }

@@ -56,7 +56,7 @@
                             </div>
                             <ul class="dropdown-menu border-0 bg-white w-100 admin-link">
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center text-body" href="{{ route('logout') }">
+                                    <a class="dropdown-item d-flex align-items-center text-body" href="{{ route('logout') }}">
                                         <i data-feather="log-out"></i>
                                         <span class="ms-2">Logout</span>
                                     </a>

@@ -1,4 +1,6 @@
-@extends('admin.layouts.main')
+{{-- @extends('admin.layouts.main') --}}
+
+@extends(auth()->user()->role === 'admin' ? 'admin.layouts.main' : 'HRD.layouts.main')
 
 @section('content')
     <div class="card bg-white border-0 rounded-10 mb-4">

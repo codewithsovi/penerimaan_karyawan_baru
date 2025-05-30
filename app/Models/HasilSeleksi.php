@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class HasilSeleksi extends Model
 {
     use HasFactory;
-    protected $quarded = [
+    protected $guarded = [
         'id',
     ];
 

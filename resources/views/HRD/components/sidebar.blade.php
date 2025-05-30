@@ -41,7 +41,7 @@
                 </a>
                 <a href="chat.html" class="menu-link">
                     <i data-feather="chevrons-down" class="menu-icon tf-icons"></i>
-                    <span class="title">Hasil</span>
+                    <span class="title">Data Keputusan</span>
                 </a>
             </div>
         </ul>

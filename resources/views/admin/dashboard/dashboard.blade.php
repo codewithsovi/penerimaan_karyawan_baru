@@ -93,8 +93,8 @@
                         <div class="card bg-white border-0 rounded-10 mb-4">
                             <div class="card-body p-4">
                                 <div class="d-flex justify-content-between align-items-center border-bottom pb-20 mb-20">
-                                    <h4 class="fw-semibold fs-18 mb-0">Peringkat Tertinggi</h4>
-                                    <div class="dropdown action-opt">
+                                    <h4 class="fw-semibold fs-18 mb-0">Bobot Kriteria Tertinggi</h4>
+                                    {{-- <div class="dropdown action-opt">
                                         <button class="btn bg-transparent p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i data-feather="more-horizontal"></i>
                                         </button>
@@ -142,23 +142,27 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                                 <div id="total_users"></div>
 
                                 <ul class="ps-0 mb-0 mt-3 list-unstyled d-flex justify-content-between text-center">
                                     <li>
-                                        <span class="d-block fw-semibold text-gray-light mb-2">Target</span>
-                                        <span class="d-block fs-20 fw-semibold d-flex align-items-center"><i class="ri-arrow-down-line fw-normal me-1 text-danger"></i> 18k</span>
+                                        <span class="d-block fw-semibold text-gray-light mb-2">Last Week</span>
+                                        <span class="d-block fs-20 fw-semibold d-flex align-items-center"><i class="ri-arrow-up-line fw-normal me-1 text-success"></i> 5.21k</span>
                                     </li>
                                     <li>
                                         <span class="d-block fw-semibold text-gray-light mb-2">Last Week</span>
                                         <span class="d-block fs-20 fw-semibold d-flex align-items-center"><i class="ri-arrow-up-line fw-normal me-1 text-success"></i> 5.21k</span>
                                     </li>
                                     <li>
-                                        <span class="d-block fw-semibold text-gray-light mb-2">Last Month</span>
-                                        <span class="d-block fs-20 fw-semibold d-flex align-items-center"><i class="ri-arrow-down-line fw-normal me-1 text-danger"></i> 32k</span>
+                                        <span class="d-block fw-semibold text-gray-light mb-2">Last Week</span>
+                                        <span class="d-block fs-20 fw-semibold d-flex align-items-center"><i class="ri-arrow-up-line fw-normal me-1 text-success"></i> 5.21k</span>
+                                    </li>
+                                    <li>
+                                        <span class="d-block fw-semibold text-gray-light mb-2">Last Week</span>
+                                        <span class="d-block fs-20 fw-semibold d-flex align-items-center"><i class="ri-arrow-up-line fw-normal me-1 text-success"></i> 5.21k</span>
                                     </li>
                                 </ul>
                             </div>

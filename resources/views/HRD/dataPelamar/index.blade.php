@@ -3,26 +3,24 @@
 @section('content')
     <div class="card bg-white border-0 rounded-10 mb-4">
         <div class="card-body p-4">
-            <div class="d-sm-flex text-center justify-content-between align-items-center border-bottom pb-20 mb-20">
-                <h4 class="fw-semibold fs-18 mb-sm-0">Pelamar List</h4>
+            <div class="d-sm-flex text-center justify-content-between align-pelamars-center border-bottom pb-20 mb-20">
+                <h4 class="fw-semibold fs-18 mb-sm-0">Users List</h4>
                 <button type="button" class="btn btn-primary text-white py-2 px-4 fw-semibold" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">
                     <i class="ri-add-line text-white"></i>
-                    Tambah Pelamar
+                    Create User
                 </button>
             </div>
             <div class="card bg-white border-0 rounded-10 mb-4">
                 <div class="card-body p-4">
                     <div class="default-table-area members-list">
                         <div class="table-responsive">
-
                             <table class="table align-middle" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">Email</th>
-                                        {{-- <th scope="col">Tanggal Lahir</th> --}}
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -32,7 +30,6 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $pelamar->name }}</td>
                                             <td>{{ $pelamar->email }}</td>
-                                            {{-- <td>{{ $pelamar->password }}</td> --}}
                                             <td>
                                                 <div class="dropdown action-opt">
                                                     <button class="btn bg p-0" type="button" data-bs-toggle="dropdown"
@@ -41,18 +38,22 @@
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
                                                         <li>
-                                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editModal-{{ $pelamar->id }}">
+                                                            <a class="dropdown-pelamar" href="#"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#editModal-{{ $pelamar->id }}">
                                                                 <i data-feather="edit-3"></i>
                                                                 Edit
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <form action="{{ route('pelamar.destroy', $pelamar->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus user ini?')">
+                                                            <form action="{{ route('pelamar.destroy', $pelamar->id) }}"
+                                                                method="POST"
+                                                                onsubmit="return confirm('Yakin ingin menghapus user ini?')">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button type="submit" class="dropdown-item text-danger">
+                                                                <button type="submit" class="dropdown-pelamar text-danger">
                                                                     <i data-feather="trash-2"></i>
-                                                                    Remove
+                                                                    Hapus
                                                                 </button>
                                                             </form>
                                                         </li>
@@ -61,35 +62,48 @@
                                             </td>
                                         </tr>
 
-                                        <!-- Modal Edit Pelamar -->
-                                        <div class="modal fade" id="editModal-{{ $pelamar->id }}" tabindex="-1" aria-labelledby="editModalLabel-{{ $pelamar->id }}" aria-hidden="true">
+                                        <!-- Modal Edit User -->
+                                        <div class="modal fade" id="editModal-{{ $pelamar->id }}" tabindex="-1"
+                                            aria-labelledby="editModalLabel-{{ $pelamar->id }}" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="editModalLabel-{{ $pelamar->id }}">Edit Pelamar</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <h1 class="modal-title fs-5"
+                                                            id="editModalLabel-{{ $pelamar->id }}">Edit User</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
                                                     </div>
-                                                    <form action="{{ route('pelamar.update', $pelamar->id) }}" method="POST">
+                                                    <form action="{{ route('pelamar.update', $pelamar->id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('PUT')
                                                         <div class="modal-body">
                                                             <div class="form-group mb-2">
                                                                 <label class="label">Nama</label>
-                                                                <input type="text" class="form-control text-dark h-58" name="name" value="{{ $pelamar->name }}" required>
+                                                                <input type="text" class="form-control text-dark h-58"
+                                                                    name="name" value="{{ $pelamar->name }}" required>
                                                             </div>
                                                             <div class="form-group mb-2">
                                                                 <label class="label">Email</label>
-                                                                <input type="email" class="form-control text-dark h-58" name="email" value="{{ $pelamar->email }}" required>
+                                                                <input type="email" class="form-control text-dark h-58"
+                                                                    name="email" value="{{ $pelamar->email }}" required>
                                                             </div>
                                                             <div class="form-group mb-2">
-                                                                <label class="label">Tanggal Lahir <small class="text-muted">(Kosongkan jika tidak ingin mengubah)</small></label>
-                                                                <input type="text" class="form-control text-dark h-58" name="password">
+                                                                <label class="label">Tanggal Lahir<small
+                                                                        class="text-muted">(Kosongkan jika tidak ingin
+                                                                        mengubah)</small></label>
+                                                                <input type="password" class="form-control text-dark h-58"
+                                                                    name="password">
                                                             </div>
-                                                            <input type="hidden" value="pelamar" class="form-control text-dark h-58" name="role">
+
+                                                            <input type="hidden" value="pelamar"
+                                                                class="form-control text-dark h-58" name="role">
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary text-white">Update</button>
+                                                            <button type="button" class="btn btn-danger text-white"
+                                                                data-bs-dismiss="modal">Tutup</button>
+                                                            <button type="submit"
+                                                                class="btn btn-primary text-white">Ubah</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -105,13 +119,13 @@
         </div>
     </div>
 
-    {{-- modal create pelamar --}}
+    {{-- modal create users --}}
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Pelamar</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Management Users</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('pelamar.store') }}" method="POST">
@@ -132,13 +146,13 @@
                         <div class="form-group mb-2">
                             <label class="label">Tanggal Lahir</label>
                             <div class="form-group">
-                                <input type="text" class="form-control text-dark h-58" name="password" placeholder="DD-MM-YYYY" required>
+                                <input type="password" class="form-control text-dark h-58" name="password" required>
                             </div>
                         </div>
                         <input type="hidden" value="pelamar" class="form-control text-dark h-58" name="role">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Tutup</button>
                         <button type="submit" class="btn btn-primary text-white">Simpan</button>
                     </div>
                 </form>

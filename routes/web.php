@@ -1,18 +1,19 @@
 <?php
 
-use App\Http\Controllers\admin\DashboardAdminController;
-use App\Http\Controllers\admin\ManajemenAkunController;
-use App\Http\Controllers\AlternatifController;
-
-use App\Http\Controllers\HRD\DashboardHRDController;
-use App\Http\Controllers\HRD\DataPelamarController;
-use App\Http\Controllers\Pelamar\DashboardPelamarController;
-use App\Http\Controllers\HasilController;
-use App\Http\Controllers\KriteriaController;
-use App\Http\Controllers\SawController;
-use App\Http\Controllers\Sesi\SesiController;
-use App\Http\Controllers\SubKriteriaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SawController;
+use App\Http\Controllers\KriteriaController;
+
+use App\Http\Controllers\Sesi\SesiController;
+use App\Http\Controllers\AlternatifController;
+use App\Http\Controllers\SubKriteriaController;
+use App\Http\Controllers\pelamar\HasilController;
+use App\Http\Controllers\HRD\DataPelamarController;
+use App\Http\Controllers\Pelamar\PelamarController;
+use App\Http\Controllers\HRD\DashboardHRDController;
+use App\Http\Controllers\admin\ManajemenAkunController;
+use App\Http\Controllers\admin\DashboardAdminController;
+use App\Http\Controllers\HasilSeleksiController;
 
 Route::get('/', function () { return view('index');})->name('halaman_utama');
 
@@ -32,13 +33,12 @@ Route::post('/HRD/CreatePelamar', [DataPelamarController::class, 'store'])->name
 Route::put('/HRD/UpdatePelamar/{id}', [DataPelamarController::class, 'update'])->name('pelamar.update');
 Route::delete('/HRD/DeletePelamar/{id}', [DataPelamarController::class, 'destroy'])->name('pelamar.destroy');
 
-// Dashboard Pelamar
-Route::get('/pelamar/dashboard', [DashboardPelamarController::class, 'index'])->name('dashboard_pelamar');
+//Pelamar
+Route::get('/pelamar', [PelamarController::class, 'index'])->name('beranda.pelamar');
 //hasil
-Route::prefix('pelamar')->middleware(['auth'])->group(function () {
-    Route::get('/hasil', [HasilController::class, 'index'])->name('pelamar.hasil');
-});
-
+// Route::prefix('pelamar')->middleware(['auth'])->group(function () {
+    Route::get('/hasil', [HasilController::class, 'index'])->name('hasil.pelamar');
+// });
 
 // kriteria
 Route::get('/kriteria', [KriteriaController::class, 'kriteria'])->name('kriteria');
@@ -52,6 +52,11 @@ Route::delete('/alternatifDelete/{user}', [AlternatifController::class, 'destroy
 
 // SAW
 Route::get('/SAW', [SawController::class, 'index'])->name('saw.index');
+Route::get('/hasil_seleksi', [HasilSeleksiController::class, 'index'])->name('hasil_seleksi');
+Route::post('/validasi-seleksi/{userId}', [SawController::class, 'validasiSeleksi'])->name('validasi.seleksi');
+
+Route::post('/seleksi/proses', [HasilSeleksiController::class, 'prosesSeleksi'])->name('seleksi.proses');
+
 //Auth
 Route::get('/login', [SesiController::class, 'toLogin'])->name('login');
 Route::post('/proses-login', [SesiController::class, 'prosesLogin'])->name('proses.login');

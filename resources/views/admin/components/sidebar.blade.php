@@ -37,9 +37,9 @@
                             <i data-feather="activity" class="menu-icon tf-icons"></i>
                             <span class="title">SAW</span>
                         </a>
-                        <a href="chat.html" class="menu-link">
+                        <a href="{{ route('hasil_seleksi') }}" class="menu-link">
                             <i data-feather="chevrons-down" class="menu-icon tf-icons"></i>
-                            <span class="title">Hasil</span>
+                            <span class="title">Hasil Seleksi</span>
                         </a>
                     </div>
                 </ul>

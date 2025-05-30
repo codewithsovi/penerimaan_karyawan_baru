@@ -138,24 +138,27 @@
                 <div class="tab-content" id="myTab5Content">
                     <div class="tab-pane fade show active" id="preview5-tab-pane" role="tabpanel"
                         aria-labelledby="preview5-tab" tabindex="0">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Nilai</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($skorAkhir as $index => $hasil)
+                        <form action="">
+                            <table class="table table-bordered">
+                                <thead>
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $users->firstWhere('id', $hasil['user_id'])->name ?? 'User '.$hasil['user_id'] }}</td>
-                                        <td>{{ number_format($hasil['nilai_akhir'], 3) }}</td>
+                                        <th scope="col">Rangking</th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">Nilai</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($skorAkhir as $index => $hasil)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $users->firstWhere('id', $hasil['user_id'])->name ?? 'User ' . $hasil['user_id'] }}
+                                            </td>
+                                            <td>{{ number_format($hasil['nilai_akhir'], 3) }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>

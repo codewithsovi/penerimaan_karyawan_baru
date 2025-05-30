@@ -16,7 +16,7 @@
 
         <!-- TENGAH (TAMBAHAN JUDUL) -->
         <div class="col-lg-4 d-none d-lg-block text-center">
-            <h4 class="fw-bold text-primary mb-0">STATUS SELEKSI PELAMAR</h4>
+            <h4 class="fw-bold text-primary mb-0">STATUS SELEKSI PENERIMAAN KARYAWAN BARU</h4>
         </div>
 
         <!-- KANAN -->
@@ -29,7 +29,7 @@
                                  data-bs-toggle="dropdown">
                                 <div class="flex-shrink-0">
                                     <img class="rounded-circle wh-54"
-                                         src="{{ asset('farol') }}/assets/images/admin.jpg" alt="admin">
+                                        src="{{ asset('farol/assets/images/profile.webp') }}" alt="admin">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <div class="d-flex align-items-center justify-content-between">

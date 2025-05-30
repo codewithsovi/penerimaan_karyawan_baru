@@ -7,6 +7,7 @@ use App\Models\Score;
 use App\Models\Kriteria;
 use App\Models\Alternatif;
 use App\Models\SubKriteria;
+use App\Models\HasilSeleksi;
 use Illuminate\Http\Request;
 
 class SawController extends Controller
@@ -15,6 +16,8 @@ class SawController extends Controller
     {
         $kriterias = Kriteria::all();
         $jumlahKriteria = $kriterias->count();
+        $hasilSeleksis = HasilSeleksi::all()->keyBy(fn($item) => $item->user_id);
+        $scores = Score::all()->keyBy('user_id');
 
         $users = User::where('role', 'pelamar')
             ->whereHas('alternatifs', function ($query) {})
@@ -37,9 +40,9 @@ class SawController extends Controller
         $normalisasi = $this->normalisasi($konversi, $kriterias);
 
         // hasil akhir
-         $skorAkhir = $this->hitungSkorAkhir($normalisasi, $kriterias);
+        $skorAkhir = $this->hitungSkorAkhir($normalisasi, $kriterias);
 
-        return view('shared.SAW.index', compact('kriterias', 'users', 'konversi', 'normalisasi', 'skorAkhir'));
+        return view('shared.SAW.index', compact('kriterias', 'users', 'konversi', 'normalisasi', 'skorAkhir', 'hasilSeleksis', 'scores'));
     }
 
     // konversi nilai
@@ -99,13 +102,10 @@ class SawController extends Controller
 
         usort($skorAkhir, fn($a, $b) => $b['nilai_akhir'] <=> $a['nilai_akhir']);
 
-         // Simpan ke database
+        // Simpan ke database
         foreach ($skorAkhir as $data) {
-        Score::updateOrCreate(
-            ['user_id' => $data['user_id']],
-            ['nilai_akhir' => $data['nilai_akhir']]
-        );
-    }
+            Score::updateOrCreate(['user_id' => $data['user_id']], ['nilai_akhir' => $data['nilai_akhir']]);
+        }
         return $skorAkhir;
     }
 }

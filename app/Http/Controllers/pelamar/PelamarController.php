@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Pelamar;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardPelamarController extends Controller
+class PelamarController extends Controller
 {
-public function index()
+    public function index()
     {
-        return view('Pelamar.dashboard.dashboard');
+        return view('Pelamar.beranda.index');
     }
 }

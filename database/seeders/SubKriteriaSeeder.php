@@ -21,15 +21,16 @@ class SubKriteriaSeeder extends Seeder
             ['bobot' => 100, 'min' => 76, 'max' => 100, 'kriteria_id' => 1],
 
             // C2 (pengalaman kerja)
-            ['bobot' => 10, 'min' => 0, 'max' => 1, 'kriteria_id' => 2], //pemula
-            ['bobot' => 30, 'min' => 2, 'max' => 3, 'kriteria_id' => 2], //cukup
-            ['bobot' => 60, 'min' => 4, 'max' => 5, 'kriteria_id' => 2], //mahir
-            ['bobot' => 100, 'min' => 6, 'max' => 10, 'kriteria_id' => 2], //sangat berpengalaman
+            ['bobot' => 10, 'min' => 0, 'max' => 25, 'kriteria_id' => 2], //pemula
+            ['bobot' => 30, 'min' => 26, 'max' => 50, 'kriteria_id' => 2], //cukup
+            ['bobot' => 60, 'min' => 51, 'max' => 75, 'kriteria_id' => 2], //mahir
+            ['bobot' => 100, 'min' => 76, 'max' => 100, 'kriteria_id' => 2], //sangat berpengalaman
 
              // C3 (pendidikan terakhir)
-            ['bobot' => 40, 'min' => 0, 'max' => 1, 'kriteria_id' => 3], // SMA
-            ['bobot' => 70, 'min' => 2, 'max' => 2, 'kriteria_id' => 3], // D3
-            ['bobot' => 100, 'min' => 3, 'max' => 3, 'kriteria_id' => 3], // S1
+            ['bobot' => 10, 'min' => 0, 'max' => 25, 'kriteria_id' => 3], //SMA
+            ['bobot' => 30, 'min' => 26, 'max' => 50, 'kriteria_id' => 3], //D3
+            ['bobot' => 60, 'min' => 51, 'max' => 75, 'kriteria_id' => 3], //S1
+            ['bobot' => 100, 'min' => 76, 'max' => 100, 'kriteria_id' => 3], //s2
 
             // C4 (wawancara)
             ['bobot' => 20, 'min' => 0, 'max' => 25, 'kriteria_id' => 4],

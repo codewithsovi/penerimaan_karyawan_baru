@@ -15,8 +15,8 @@
                                 <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Bobot</th>
-                                    <th scope="col">Min</th>
-                                    <th scope="col">Max</th>
+                                    <th scope="col">Range</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,8 +24,7 @@
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td>{{ $skr->bobot }}</td>
-                                    <td>{{ $skr->min }}</td>
-                                    <td>{{ $skr->max }}</td>
+                                    <td>{{ $skr->min }} - {{ $skr->max }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

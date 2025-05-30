@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('hasil_seleksis', function (Blueprint $table) {
             $table->id();
-            $table->enum('status',['diterima', 'tidak diterima']);
+            $table->enum('status',[ 'tidak diterima', 'diterima',]);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')

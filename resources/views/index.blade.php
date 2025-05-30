@@ -26,8 +26,6 @@
 
 <body>
 
-
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
@@ -36,16 +34,16 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="{{ asset('chain-1.0.0') }}/index.html" class="logo">
-              <img src="{{ asset('chain-1.0.0') }}/assets/images/logo.png" alt="Chain App Dev">
+              <img src="{{ asset('chain-1.0.0') }}/assets/images/logo-sspkb-putih.jpg" alt="Chain App Dev" width="25" height="45" style="margin-left: 20px;">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#top" class="active">Beranda</a></li>
               <li class="scroll-to-section"><a href="#services">Proses</a></li>
               <li class="scroll-to-section"><a href="#about">Tentang</a></li>
               <li class="scroll-to-section"><a href="#pricing">Panduan</a></li>
-              <li><div class="gradient-button"><a id="modal_trigger" href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i>Sign In</a></div></li>
             </ul>
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -241,22 +239,12 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
-            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+            <h4>Sistem Penerimaan Karyawan Baru</h4>
           </div>
         </div>
         <div class="col-lg-6 offset-lg-3">
           <form id="search" action="#" method="GET">
             <div class="row">
-              <div class="col-lg-6 col-sm-6">
-                <fieldset>
-                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-6 col-sm-6">
-                <fieldset>
-                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
-                </fieldset>
-              </div>
             </div>
           </form>
         </div>
@@ -264,15 +252,15 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="footer-widget">
-            <h4>Contact Us</h4>
+            <h4>Kontak Kami</h4>
             <p>Sovi Alfi Nafilah - Indonesia</p>
-            <p><a href="#">010-020-0340</a></p>
-            <p><a href="#">info@company.com</a></p>
+            <p><a href="#">0877-6662-0429</a></p>
+            <p><a href="#">s2pkb@gmail.com</a></p>
           </div>
         </div>
         <div class="col-lg-3">
           <div class="footer-widget">
-            <h4>About Us</h4>
+            <h4>Tentang</h4>
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">Services</a></li>
@@ -282,32 +270,11 @@
         </div>
         <div class="col-lg-3">
           <div class="footer-widget">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="#">Free Apps</a></li>
-              <li><a href="#">App Engine</a></li>
-              <li><a href="#">Programming</a></li>
-              <li><a href="#">Development</a></li>
-              <li><a href="#">App News</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4>About Our Company</h4>
+            <h4>Filosofi Logo Kami</h4>
             <div class="logo">
-              <img src="{{ asset('chain-1.0.0') }}/assets/images/white-logo.png" alt="">
+              <img src="{{ asset('chain-1.0.0') }}/assets/images/logo-sspkb-transparan.png"  width="90" height="90" alt="logo-s2pkb">
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="copyright-text">
-            <p>Copyright © 2022 Chain App Dev Company. All Rights Reserved.
-          <br>Design: <a href="{{ asset('chain-1.0.0') }}/https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a><br>
-
-          Distributed By: <a href="{{ asset('chain-1.0.0') }}/https://themewagon.com/" target="_blank" title="Bootstrap Template World">ThemeWagon</a>
-        </p>
+            <p>Bentuk Geometris Berlapis Menunjukkan proses seleksi yang sistematis, bertahap, dan profesional Melambangkan kepercayaan, profesionalisme, dan perkembangan calon karyawan.</p>
           </div>
         </div>
       </div>

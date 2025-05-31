@@ -9,6 +9,7 @@ use App\Models\Kriteria;
 
 class DashboardAdminController extends Controller
 {
+
     public function index()
     {
         $jumlahUser =User::all()->count();

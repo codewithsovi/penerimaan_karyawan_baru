@@ -61,7 +61,7 @@ class User extends Authenticatable
         return $this->hasOne(Score::class);
     }
 
-    public function hasilseleksis() :HasOne{
+    public function hasilSeleksi() :HasOne{
         return $this->hasOne(HasilSeleksi::class);
     }
 }

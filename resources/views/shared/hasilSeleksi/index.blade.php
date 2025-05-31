@@ -11,6 +11,7 @@
                     <div class="tab-pane fade show active" id="preview5-tab-pane" role="tabpanel" aria-labelledby="preview5-tab"
                         tabindex="0">
                         <!-- Form Penentu Jumlah Pelamar yang Diterima -->
+                         @if (auth()->user()->role === 'hrd')
                         <form method="POST" action="{{ route('seleksi.proses') }}" class="mb-4 d-flex align-items-center">
                             @csrf
                             <label class="me-2 mb-0">Jumlah Diterima:</label>
@@ -18,7 +19,7 @@
                                 min="1" class="form-control w-auto me-2" required />
                             <button type="submit" class="btn btn-primary">Proses Seleksi Otomatis</button>
                         </form>
-
+                        @endif
                         <!-- Tabel Nilai Akhir -->
                         <table class="table table-bordered">
                             <thead>

@@ -20,6 +20,16 @@
     <link rel="stylesheet" href="{{ asset('farol') }}/assets/css/quill.snow.css">
     <link rel="stylesheet" href="{{ asset('farol') }}/assets/css/style.css">
 
+    <script>
+        const routes = {
+            pelamarIndex: "{{ route('data_pelamar') }}",
+            kriteriaIndex: "{{ route('kriteria') }}",
+            alternatifIndex: "{{ route('alternatif') }}",
+            sawIndex: "{{ route('saw.index') }}",
+            hasilIndex: "{{ route('hasil_seleksi') }}",
+        };
+    </script>
+
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('farol') }}/assets/images/favicon.png">
@@ -44,6 +54,7 @@
             <!-- End Body Content Area -->
 
             <div class="flex-grow-1"></div>
+
 
             <!-- Start Footer Area -->
             @include('admin.components.footer')
@@ -71,6 +82,9 @@
             </div>
         </div>
     </div>
+
+    // tambahkan disini
+
 
 
     @if (session('success') || session('error'))
@@ -110,6 +124,26 @@
     <script src="{{ asset('farol') }}/assets/js/custom/project-management.js"></script>
     <script src="{{ asset('farol') }}/assets/js/custom/custom.js"></script>
 
+    <script>
+        function handleSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById('searchInput').value.toLowerCase();
+
+            if (query === "data pelamar" || query === "Data Pelamar") {
+                window.location.href = "{{ route('data_pelamar') }}";
+            } else if (query === "kriteria" || query === "kriterias") {
+                window.location.href = "{{ route('kriteria') }}";
+            } else if (query === "alternatif" || query === "alternatifs") {
+                window.location.href = "{{ route('alternatif') }}";
+            } else if (query === "saw" || query === "SWA") {
+                window.location.href = "{{ route('saw.index') }}";
+            } else if (query === "hasil" || query === "hasil seleksi") {
+                window.location.href = "{{ route('hasil_seleksi') }}";
+            } else {
+                alert("Halaman tidak ditemukan");
+            }
+        }
+    </script>
 
 
 </body>

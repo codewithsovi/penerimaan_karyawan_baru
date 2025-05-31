@@ -9,15 +9,17 @@
                             <i data-feather="menu"></i>
                         </button>
                     </li>
+
                     <li>
-                        <form class="src-form position-relative">
-                            <input type="text" class="form-control" placeholder="Search here..">
+                        <form class="src-form position-relative" onsubmit="handleSearch(event)">
+                            <input type="text" class="form-control" placeholder="Search here.." id="searchInput">
                             <button type="submit"
                                 class="src-btn position-absolute top-50 end-0 translate-middle-y bg-transparent p-0 border-0">
                                 <i data-feather="search"></i>
                             </button>
                         </form>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -56,7 +58,8 @@
                             </div>
                             <ul class="dropdown-menu border-0 bg-white w-100 admin-link">
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center text-body" href="{{ route('logout') }}">
+                                    <a class="dropdown-item d-flex align-items-center text-body"
+                                        href="{{ route('logout') }}">
                                         <i data-feather="log-out"></i>
                                         <span class="ms-2">Logout</span>
                                     </a>

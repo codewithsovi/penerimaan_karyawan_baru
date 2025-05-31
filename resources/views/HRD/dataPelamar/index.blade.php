@@ -4,11 +4,11 @@
     <div class="card bg-white border-0 rounded-10 mb-4">
         <div class="card-body p-4">
             <div class="d-sm-flex text-center justify-content-between align-pelamars-center border-bottom pb-20 mb-20">
-                <h4 class="fw-semibold fs-18 mb-sm-0">Users List</h4>
+                <h4 class="fw-semibold fs-18 mb-sm-0">Data Pelamar</h4>
                 <button type="button" class="btn btn-primary text-white py-2 px-4 fw-semibold" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">
                     <i class="ri-add-line text-white"></i>
-                    Create User
+                    Pelamar
                 </button>
             </div>
             <div class="card bg-white border-0 rounded-10 mb-4">

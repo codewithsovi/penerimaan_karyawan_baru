@@ -47,7 +47,7 @@
                             </div>
                             <ul class="dropdown-menu border-0 bg-white w-100 admin-link">
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center text-body" href="{{ route('logout') }}">
+                                    <a href="javascript:void(0)" id="logoutBtn" class="dropdown-item d-flex align-items-center text-body">
                                         <i data-feather="log-out"></i>
                                         <span class="ms-2">Logout</span>
                                     </a>
@@ -60,3 +60,23 @@
         </div>
     </div>
 </header>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById('logoutBtn').addEventListener('click', function () {
+        Swal.fire({
+            title: 'Keluar dari akun?',
+            text: "Anda yakin ingin logout?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, logout!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "{{ route('logout') }}";
+            }
+        })
+    });
+</script>
+
